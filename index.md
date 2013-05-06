@@ -78,7 +78,7 @@ More info on raphael.handdrawn.js
 
 ### Resources
 
-* [Documentation](http://jhund.github.io/raphael.handdrawn.js)
+* [Documentation](http://handdrawn.clearcove.ca)
 * [Source code (github)](https://github.com/jhund/raphael.handdrawn.js)
 * [Issues](https://github.com/jhund/raphael.handdrawn.js/issues)
 
