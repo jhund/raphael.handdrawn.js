@@ -4,7 +4,7 @@ Raphael.handdrawn.js
 A RaphaelJS plugin to give your vector graphics a hand drawn style. Great for
 sketch diagrams, charts and illustrations.
 
-Check out the [documentation for usage and examples](http://jhund.github.io/raphael.handdrawn.js).
+Check out the [documentation for usage and examples](http://handdrawn.clearcove.ca).
 
 More info on raphael.handdrawn.js
 ---------
