@@ -1,0 +1,170 @@
+<script type="text/javascript">
+  var hdWidth = 630,
+      hdHeight = 300;
+</script>
+
+<h3>drawnLine</h3>
+<p>Command: <code>paper.drawnLine(x, y, x2, y2, wobble)</code></p>
+<p>The example below renders a series of horizontal lines with increasing wobble:</p>
+<div id="handdrawnLine" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var paperLine = Raphael('handdrawnLine', hdWidth, hdHeight);
+    for(var i = 1; i < (hdHeight - 10); i += 11) {
+      paperLine.drawnLine(
+        20,
+        i + 2.5,
+        hdWidth - 20,
+        i + 2.5,
+        (i / 30)
+      ).attr({ stroke: "#999" });
+    };
+  });
+</script>
+
+
+
+<h3>drawnRect</h3>
+<p>Command: <code>paper.drawnRect(x, y, x2, y2, wobble)</code></p>
+<p>The example below renders a series of rectangles with increasing wobble:</p>
+<div id="handdrawnRect" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var paperRect = Raphael("handdrawnRect", hdWidth, hdHeight);
+    for(var i = 1; i < hdWidth - 100; i+= 50) {
+      paperRect.drawnRect(
+        100 - i/10,
+        70 - i/10,
+        i,
+        i/2,
+        i/50
+      ).attr({stroke: "#999"});
+    };
+  });
+</script>
+
+
+
+<h3>drawnCircularArc</h3>
+<p>Command: <code>paper.drawnCircularArc(centerX, centerY, radius, startAngle, endAngle)</code></p>
+<p>
+  The example below renders a series of circular arcs. The wobble on circular
+  arcs is a function of the radius.
+</p>
+<div id="handdrawnCircularArc" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var paperCircularArc = Raphael('handdrawnCircularArc', hdWidth, hdHeight);
+    for(var i = 0; i < 75; i++) {
+      var r = hdWidth + Raphael.randomize(100);
+      var cx = hdWidth/2;
+      var endpointY = Raphael.randomize(hdHeight*1.2) - hdHeight*0.1;
+      var cy = endpointY - ((hdWidth/2) * 2);
+      var arc = paperCircularArc.drawnCircularArc(cx, cy, r, 60, 120);
+      if(i%2 == 0) arc.rotate(180, cx, endpointY + (cy + r - endpointY) / 2);
+    };
+  });
+</script>
+
+
+
+<h3>drawnRegularPolygon</h3>
+<p>Command: <code>paper.drawnRegularPolygon(centerX, centerY, radius, numberOfSides, wobble)</code></p>
+<p>The example below renders a grid of regular polygons with random number of sides.</p>
+<div id="handdrawnRegularPolygon" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var paperRegularPolygon = Raphael('handdrawnRegularPolygon', hdWidth, hdHeight);
+    for(var i = 0; i < hdWidth+20; i+=100) {
+      for(var j=0; j < hdHeight+20; j +=100) {
+        paperRegularPolygon.drawnRegularPolygon(
+          i,
+          j,
+          50 + Raphael.randomize(15),
+          3 + Raphael.randomize(10, 5),
+          2 + Raphael.randomize(5, 2)
+        );
+      };
+    };
+  });
+</script>
+
+
+
+<h3>drawnCircle</h3>
+<p>Command: <code>paper.drawnCircle(centerX, centerY, radius, wobble)</code></p>
+<p>
+  The hand drawn diagrams go well with a handwriting font as shown in this example.
+  This example also shows that closed handdrawn shapes can have a fill attribute.
+</p>
+<div id="handdrawnCircle" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var paperCircle = Raphael('handdrawnCircle', hdWidth, hdHeight);
+    paperCircle.drawnCircle(
+      hdWidth/2, hdHeight/2, 75, 5
+    ).attr({
+      stroke: "#000", fill: "#f00", "fill-opacity": 0.2
+    });
+    paperCircle.text(
+      hdWidth/2,
+      hdHeight/2,
+      "Drawn using\ndrawnCircle"
+    ).attr({
+      "font-family": "'Shadows Into Light', cursive",
+      "font-size": 18
+    });
+  });
+</script>
+
+<h3>Random number distributions</h3>
+<p>
+  This chart compares one uniform and two normal distributions for random numbers.
+  Currently I use the uniform distribution, but I'm exploring normal distributions
+  for a more natural look.
+</p>
+<div id="rnPaper" style="height: 300px;"></div>
+<script type="text/javascript">
+  $(function(){
+    var rnPaper = Raphael('rnPaper', hdWidth, hdHeight);
+    var uniform = {},
+        normal1 = {},
+        normal2 = {},
+        range = 100,
+        numSamples = 5000,
+        xOffset;
+    // initialize histogram containers
+    for(var i = 0; i < (range * 2); i++) {
+      uniform[i] = 0;
+      normal1[i] = 0;
+      normal2[i] = 0;
+    }
+    // generate random data
+    for(var i = 0; i < numSamples; i++) {
+      uniform[Raphael.randomizeUniform(range, range / 2)] += 1;
+      normal1[Raphael.randomizeNormal1(range, range / 2)] += 1;
+      normal2[Raphael.randomizeNormal2(range, range / 2)] += 1;
+    };
+    // render uniform distribution
+    xOffset = 0 * (range + 20);
+    for(var i = 0; i < (range * 2); i++) {
+      rnPaper.path('M' + (i + xOffset) + ' ' + hdHeight + 'L' + (i + xOffset) + ' ' + (hdHeight - uniform[i])).translate(0.5, 0.5);
+    };
+    rnPaper.path('M' + xOffset + ' 0L' + xOffset + ' ' + hdHeight).attr({ stroke: "#f00" }).translate(0.5, 0.5);
+    rnPaper.path('M' + (xOffset + range) + ' 0L' + (xOffset + range) + ' ' + hdHeight).translate(0.5, 0.5).attr({ stroke: "#f00" });
+    // render normal1 distribution
+    xOffset = 1 * (range + 20);
+    for(var i = 0; i < (range * 2); i++) {
+      rnPaper.path('M' + (i + xOffset) + ' ' + hdHeight + 'L' + (i + xOffset) + ' ' + (hdHeight - normal1[i])).translate(0.5, 0.5);
+    };
+    rnPaper.path('M' + xOffset + ' 0L' + xOffset + ' ' + hdHeight).attr({ stroke: "#f00" }).translate(0.5, 0.5);
+    rnPaper.path('M' + (xOffset + range) + ' 0L' + (xOffset + range) + ' ' + hdHeight).translate(0.5, 0.5).attr({ stroke: "#f00" });
+    // render normal2 distribution
+    xOffset = 2 * (range + 20);
+    for(var i = 0; i < (range * 2); i++) {
+      rnPaper.path('M' + (i + xOffset) + ' ' + hdHeight + 'L' + (i + xOffset) + ' ' + (hdHeight - normal2[i])).translate(0.5, 0.5);
+    };
+    rnPaper.path('M' + xOffset + ' 0L' + xOffset + ' ' + hdHeight).attr({ stroke: "#f00" }).translate(0.5, 0.5);
+    rnPaper.path('M' + (xOffset + range) + ' 0L' + (xOffset + range) + ' ' + hdHeight).translate(0.5, 0.5).attr({ stroke: "#f00" });
+  });
+</script>

@@ -1,0 +1,5 @@
+if [[ -n "$rvm_environments_path" && -s "$rvm_environments_path/ruby-1.9.3@raphael.handdrawn-gh-pages" ]] ; then
+  . "$rvm_environments_path/ruby-1.9.3@raphael.handdrawn-gh-pages"
+else
+  rvm --create use "ruby-1.9.3@raphael.handdrawn-gh-pages"
+fi
