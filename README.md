@@ -28,6 +28,11 @@ More info on raphael.handdrawn.js
 * [Issues](https://github.com/jhund/raphael.handdrawn.js/issues)
 
 
+### Credits
+
+This plugin is based on https://github.com/the55/implements55
+
+
 
 ### License
 

@@ -5,7 +5,7 @@
 // Author: Jo Hund
 // MIT licensed
 //
-// Inspired by https://github.com/the55/implements55
+// Based on https://github.com/the55/implements55
 //
 //---------------------------------------------------------------- extensions
 
