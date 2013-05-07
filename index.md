@@ -3,65 +3,82 @@ layout: default
 ---
 
 <div class="page-header">
-  <h1>Raphael.handdrawn.js</h1>
+  <h1>Handdrawn.js</h1>
 </div>
 
 A RaphaelJS plugin to give your vector graphics a hand drawn style. Great for
 sketch diagrams, charts and illustrations.
 
+<div id="handdrawnIntro" class="rPaper img-polaroid"></div>
 
-<h3>drawnLine</h3>
-<p>Command: <code>paper.drawnLine(x, y, x2, y2, wobble)</code></p>
-<p>The example below renders a series of horizontal lines with increasing wobble:</p>
-<div id="handdrawnLine" style="height: 300px;"></div>
+### drawnLine
 
+<pre>paper.drawnLine(x, y, x2, y2, wobble)</pre>
 
+The example below renders a series of horizontal lines with increasing wobble:
 
-<h3>drawnRect</h3>
-<p>Command: <code>paper.drawnRect(x, y, x2, y2, wobble)</code></p>
-<p>The example below renders a series of rectangles with increasing wobble:</p>
-<div id="handdrawnRect" style="height: 300px;"></div>
+<div id="handdrawnLine" class="rPaper img-polaroid"></div>
 
 
 
-<h3>drawnCircularArc</h3>
-<p>Command: <code>paper.drawnCircularArc(centerX, centerY, radius, startAngle, endAngle)</code></p>
-<p>
-  The example below renders a series of circular arcs. The wobble on circular
-  arcs is a function of the radius.
-</p>
-<div id="handdrawnCircularArc" style="height: 300px;"></div>
+### drawnRect
+
+<pre>paper.drawnRect(x, y, x2, y2, wobble)</pre>
+
+The example below renders a series of rectangles with increasing wobble:
+
+<div id="handdrawnRect" class="rPaper img-polaroid"></div>
 
 
 
-<h3>drawnRegularPolygon</h3>
-<p>Command: <code>paper.drawnRegularPolygon(centerX, centerY, radius, numberOfSides, wobble)</code></p>
-<p>The example below renders a grid of regular polygons with random number of sides.</p>
-<div id="handdrawnRegularPolygon" style="height: 300px;"></div>
+### drawnCircularArc
+
+<pre>paper.drawnCircularArc(centerX, centerY, radius, startAngle, endAngle)</pre>
+
+The example below renders a series of circular arcs. The wobble on circular
+arcs is a function of the radius.
+
+<div id="handdrawnCircularArc" class="rPaper img-polaroid"></div>
 
 
 
-<h3>drawnCircle</h3>
-<p>Command: <code>paper.drawnCircle(centerX, centerY, radius, wobble)</code></p>
-<p>
-  The hand drawn diagrams go well with a handwriting font as shown in this example.
-  This example also shows that closed handdrawn shapes can have a fill attribute.
-</p>
-<div id="handdrawnCircle" style="height: 300px;"></div>
+### drawnRegularPolygon
+
+<pre>paper.drawnRegularPolygon(centerX, centerY, radius, numberOfSides, wobble)</pre>
+
+The example below renders a grid of regular polygons with random number of sides.
+
+<div id="handdrawnRegularPolygon" class="rPaper img-polaroid"></div>
 
 
 
-<h3>Random number distributions</h3>
-<p>
-  This chart compares one uniform and two normal distributions for random numbers.
-  Currently I use the uniform distribution, but I'm exploring normal distributions
-  for a more natural look.
-</p>
-<div id="rnPaper" style="height: 300px;"></div>
+### drawnCircle
+
+<pre>paper.drawnCircle(centerX, centerY, radius, wobble)</pre>
+
+The hand drawn diagrams go well with a handwriting font as shown in this example.
+This example also shows that closed handdrawn shapes can have a fill attribute.
+
+<div id="handdrawnCircle" class="rPaper img-polaroid"></div>
+
+
+### Responsive design with Raphael
+
+The SVG graphics on this page are responsive, i.e. they shrink as the
+viewport gets smaller. I followed this 
+[recipe for responsive SVG graphics](http://jsfiddle.net/AUNwC/44/)
+
+### Random number distributions
+
+This chart compares one uniform and two normal distributions for random numbers.
+Currently I use the uniform distribution, but I'm exploring normal distributions
+for a more natural look.
+
+<div id="rnPaper" class="rPaper img-polaroid"></div>
 
 ----
 
-More info on raphael.handdrawn.js
+More info
 ---------
 
 ### Dependencies
@@ -82,6 +99,10 @@ More info on raphael.handdrawn.js
 * [Source code (github)](https://github.com/jhund/raphael.handdrawn.js)
 * [Issues](https://github.com/jhund/raphael.handdrawn.js/issues)
 
+
+### Credits
+
+This plugin is based on https://github.com/the55/implements55
 
 
 ### License
