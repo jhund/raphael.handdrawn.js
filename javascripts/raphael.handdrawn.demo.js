@@ -5,7 +5,7 @@ $(function(){
 
   var paperIntro = Raphael('handdrawnIntro', hdWidth, hdHeight);
   paperIntro.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperIntro.setSize('100%', '100%');
+  paperIntro.setSize('100%', hdHeight + 'px');
   paperIntro.drawnCircle(
     470, 170, 100, 5
   ).attr({
@@ -34,8 +34,8 @@ $(function(){
   });
   paperIntro.text(
     255,
-    290,
-    "* reload the page to see how the graphic looks different every time"
+    285,
+    "* reload the page to see how the graphic looks different each time"
   ).attr({
     "font-family": "'Shadows Into Light', cursive",
     "font-size": 18
@@ -43,7 +43,7 @@ $(function(){
 
   var paperLine = Raphael('handdrawnLine', hdWidth, hdHeight);
   paperLine.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperLine.setSize('100%', '100%');
+  paperLine.setSize('100%', hdHeight + 'px');
   for(var i = 20; i < (hdHeight - 10); i += 11) {
     paperLine.drawnLine(
       20,
@@ -56,7 +56,7 @@ $(function(){
 
   var paperRect = Raphael("handdrawnRect", hdWidth, hdHeight);
   paperRect.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperRect.setSize('100%', '100%');
+  paperRect.setSize('100%', hdHeight + 'px');
   for(var i = 20; i < hdWidth - 100; i+= 50) {
     paperRect.drawnRect(
       100 - i/10,
@@ -69,7 +69,7 @@ $(function(){
 
   var paperCircularArc = Raphael('handdrawnCircularArc', hdWidth, hdHeight);
   paperCircularArc.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperCircularArc.setSize('100%', '100%');
+  paperCircularArc.setSize('100%', hdHeight + 'px');
   for(var i = 0; i < 75; i++) {
     var r = hdWidth + Raphael.randomize(100),
         cx = hdWidth/2
@@ -81,7 +81,7 @@ $(function(){
 
   var paperRegularPolygon = Raphael('handdrawnRegularPolygon', hdWidth, hdHeight);
   paperRegularPolygon.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperRegularPolygon.setSize('100%', '100%');
+  paperRegularPolygon.setSize('100%', hdHeight + 'px');
   for(var i = 0; i < hdWidth+20; i+=100) {
     for(var j=0; j < hdHeight+20; j +=100) {
       paperRegularPolygon.drawnRegularPolygon(
@@ -96,7 +96,7 @@ $(function(){
 
   var paperCircle = Raphael('handdrawnCircle', hdWidth, hdHeight);
   paperCircle.setViewBox(0, 0, hdWidth, hdHeight, true);
-  paperCircle.setSize('100%', '100%');
+  paperCircle.setSize('100%', hdHeight + 'px');
   paperCircle.drawnCircle(
     hdWidth/2, hdHeight/2, 75, 5
   ).attr({
@@ -121,7 +121,7 @@ $(function(){
       numSamples = 5000,
       xOffset;
   rnPaper.setViewBox(0, 0, width, height, true);
-  rnPaper.setSize('100%', '100%');
+  rnPaper.setSize('100%', height + 'px');
   // initialize histogram containers
   for(var i = 0; i < (range * 2); i++) {
     uniform[i] = 0;
