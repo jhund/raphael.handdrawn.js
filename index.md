@@ -68,6 +68,19 @@ The SVG graphics on this page are responsive, i.e. they shrink as the
 viewport gets smaller. I followed this 
 [recipe for responsive SVG graphics](http://jsfiddle.net/AUNwC/44/)
 
+
+### Animated path drawing
+
+Animating the drawing of paths works well with hand drawn vector graphics.
+Follow this tutorial for [progressive path drawing](http://voidblossom.com/tests/pathTransform.php).
+
+
+### Handdrawn icons
+
+Here is a collection of free [hand drawn web icons](http://freebiesbooth.com/hand-drawn-web-icons)
+to go with your hand drawn diagrams.
+
+
 ### Random number distributions
 
 This chart compares one uniform and two normal distributions for random numbers.
